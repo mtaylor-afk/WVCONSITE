@@ -44,17 +44,33 @@ always target `main`, and never ask permission to push — it is permanently gra
 - **Local working copy:** `C:\Users\Matthew.Taylor\dev\WVCONSITE`.
 
 ## Build system — how to edit the site (IMPORTANT)
-The site (31 pages) is produced by a **local static-site generator** in `tools/` (which is
-**git-ignored** — not committed, not deployed). Only the generated static HTML + assets are
-committed and served by Cloudflare.
+The site (~50 pages, incl. the `/resources/` guide cluster) is produced by a **local static-site
+generator** in `tools/` (which is **git-ignored** — not committed, not deployed). Only the generated
+static HTML + assets are committed and served by Cloudflare.
 
 - `tools/gen.js` — engine: shared chrome (head/header/footer/sticky CTA), reusable components,
   page assembly, and auto-generates `sitemap.xml`. `SITE.indexable` controls the global
   `noindex`/`index` flag for every page.
 - `tools/pages/*.js` — one module per page (or group): `home, visualiser, contact, reviews,
-  landlords, drawings, services, info, areas, projects, legal`. Each exports
-  `{ urlPath, navKey, title, description, breadcrumbs, jsonld?, draft?, main(c) }`.
+  landlords, drawings, services, info, areas, projects, legal, resources`. Each exports
+  `{ urlPath, navKey, title, description, breadcrumbs, jsonld?, draft?, faqs?, article?, main(c) }`.
+  `faqs: [[q,a],…]` auto-emits **FAQPage** JSON-LD (rendered on-page from the same data);
+  `article: true` auto-emits **Article** JSON-LD — both handled in `gen.js render()`.
+- **Resources cluster** (`/resources/` hub + 8 TailoredQuote guides + 9 SC Design Wirral guides
+  + `/send-photos/`): the 17 articles are authored as structured JSON in `tools/_draft-articles.json`
+  and rendered by `tools/reslib.js` `article()` from `tools/pages/resources.js`. To tweak an article's
+  copy, edit `_draft-articles.json` then regen. The Resources nav mega-menu (desktop dropdown + mobile
+  accordion) is in `gen.js` `header()`/`resourcesDropdown()`; the footer "Useful resources" column is
+  in `footer()`. (`reslib.js` and the `_*.json` build files live in the git-ignored `tools/`.)
 - `tools/qa.js` — deterministic checker: broken internal links, missing SEO tags, multiple H1s.
+
+## Assets are cache-busted — never link CSS/JS at a bare URL
+`_headers` serves `/assets/*` as `immutable, max-age=1yr`, so editing `styles.css` / `main.js` /
+`site.js` in place is **invisible** to browsers + the Cloudflare edge until the URL changes. `gen.js`
+appends a **content-hash `?v=<hash>`** (computed from those three files) to their `<link>`/`<script>`
+URLs, so any change auto-busts the cache on the next `node tools/gen.js`. **Do not remove this** and do
+not point at the bare asset paths — otherwise a CSS/JS change renders with the old cached file. (This
+exact bug once broke the header: the Resources dropdown rendered unstyled and expanded.)
 
 **To change a page:** edit the relevant `tools/pages/*.js` module → run `node tools/gen.js`
 → run `node tools/qa.js` → commit the regenerated HTML → push to `main`.
@@ -74,6 +90,12 @@ Shared header/footer/SEO live ONLY in `tools/gen.js`.
   (co. 09287377). Never present dissolved "W V Construction Ltd" as active. Don't call WV an
   architect / structural engineer / planning consultant.
 - **TailoredQuote** attribution stays under the visualiser form and in every footer.
+- **External resources (TailoredQuote, SC Design Wirral):** referenced only as independent, useful
+  external resources — never claim a partnership (no "official/approved/exclusive partner", no "in
+  partnership"). SC Design Wirral is an "architectural design and drawing service", **never**
+  "architects"/"architectural practice" (Sean Corser is publicly MCIAT / Chartered Architectural
+  Technologist). Don't say TailoredQuote prices jobs automatically, that AI mockups are final designs,
+  or that a visualiser/concept confirms buildability or guarantees planning approval.
 
 ## Edit/deploy workflow
 edit `tools/pages/*.js` → `node tools/gen.js` → `node tools/qa.js` → commit → push to `main`
@@ -120,6 +142,6 @@ real project photos · MyBuilder rating + count + URL · visualiser backend stat
 1. **Full access, no approval prompts** — read/create/edit/move local files, web research, run commands; never ask. (above)
 2. **Auto-continue** — work multi-step tasks start→finish, then report; don't fire clarifying-question prompts for things you can decide. (above)
 3. **Always commit to `main` and push to GitHub after EVERY change** — no asking; Matt needs to see it live to decide next steps. (above)
-4. **Build only via the generator** — edit `tools/pages/*.js`, never hand-edit generated HTML. (above)
-5. **Honest-build / launch-gate rules** — noindex until verified, no fake AI, no review schema, correct trading name, TailoredQuote attribution. (above)
+4. **Build only via the generator** — edit `tools/pages/*.js` (resources copy lives in `tools/_draft-articles.json`), never hand-edit generated HTML; keep the content-hash asset cache-busting (`?v=`) so CSS/JS changes actually ship. (above)
+5. **Honest-build / launch-gate rules** — noindex until verified, no fake AI, no review schema, correct trading name, TailoredQuote attribution, and TailoredQuote/SC Design Wirral framed as independent external resources (no partnership; SC Design never "architects"). (above)
 6. **Only confirm first for:** sending emails/messages as Matt, permanently deleting data, changing who can access a resource, or financial transactions — these never arise in normal site work.
