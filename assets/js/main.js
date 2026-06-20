@@ -236,4 +236,38 @@
     el.addEventListener("focus", function () { document.body.classList.add("sticky-hidden"); });
     el.addEventListener("blur", function () { document.body.classList.remove("sticky-hidden"); });
   });
+
+  /* ---------- Reviews: filter by work type (progressive enhancement) ----------
+     Cards render visible in HTML; JS only toggles the `hidden` attribute. With
+     JS off, every review stays readable and the "All reviews" tab is pressed. */
+  document.querySelectorAll("[data-review-filters]").forEach(function (group) {
+    var scope = group.closest("section") || document;
+    var cards = Array.prototype.slice.call(scope.querySelectorAll("[data-review-card]"));
+    var buttons = Array.prototype.slice.call(group.querySelectorAll("[data-filter]"));
+    var status = scope.querySelector("[data-review-status]");
+    var total = cards.length;
+
+    function apply(cat, label) {
+      var shown = 0;
+      cards.forEach(function (card) {
+        var match = cat === "all" || card.getAttribute("data-category") === cat;
+        if (match) { card.removeAttribute("hidden"); shown++; }
+        else { card.setAttribute("hidden", "hidden"); }
+      });
+      buttons.forEach(function (b) {
+        b.setAttribute("aria-pressed", b.getAttribute("data-filter") === cat ? "true" : "false");
+      });
+      if (status) {
+        status.textContent = cat === "all"
+          ? "Showing all " + total + " reviews."
+          : "Showing " + shown + " " + (shown === 1 ? "review" : "reviews") + " for " + (label || "this type") + ".";
+      }
+    }
+
+    group.addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-filter]");
+      if (!btn) return;
+      apply(btn.getAttribute("data-filter"), btn.getAttribute("data-label"));
+    });
+  });
 })();

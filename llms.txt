@@ -58,7 +58,8 @@ SC Design Wirral guides (drawings & design, for homeowners):
 The Extension & Refurbishment Visualiser lets people upload a photo and describe an idea. Output is concept/inspiration only — it is NOT a quote, fixed price, architectural drawing, planning advice, structural design, building-regulations information, or confirmation that an idea is buildable or approvable. Visualised images are powered by TailoredQuote.co.uk (https://tailoredquote.co.uk/).
 
 ## Reviews
-WV Construction has historic MyBuilder review proof under its WV Construction trading profile (5/5 from 13 reviews; reviews are historic, around 2010–2014). Source: https://www.mybuilder.com/profile/wvatc61/reviews?page=1 — rating and count to be verified before launch.
+/reviews/ shows historic public MyBuilder review proof for WV Construction, with visible dates, project types, source links and verification notes. The reviews are historic (around 2010–2014) and linked to the WV Construction trading profile (5/5 from 13 reviews; 10 verifiable examples are shown on-page, with a note that MyBuilder lists 13). Source: https://www.mybuilder.com/profile/wvatc61/reviews?page=1 — rating and count to be verified before launch. The page deliberately uses no Review/AggregateRating schema (third-party reviews shown on the business's own site).
+- Reviews: https://wvconstructionwirral.co.uk/reviews/
 
 ## Contact
 Phone: 0151 200 1341 (verify) · WhatsApp: 07966 978824 (verify) · Email: antonycor@hotmail.co.uk (verify)
