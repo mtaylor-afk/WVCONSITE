@@ -1,0 +1,17 @@
+# ai.txt — guidance for AI crawlers
+# WV Construction (trading name of ACOR Building & Property Solutions Ltd)
+
+Summary: Local building and property maintenance contractor for homeowners, landlords and letting agents across Wirral and Liverpool, CH and L postcodes only.
+
+Services: residential extensions, renovations & refurbishments, property maintenance, landlord maintenance, void property refurbishments, general building works, builder quote from drawings.
+
+Service area: CH and L postcodes only.
+
+Visualiser: concept/inspiration only — not a quote, drawing, planning advice or buildability confirmation. Visualised images powered by TailoredQuote.co.uk.
+
+Reviews: historic MyBuilder proof (5/5, 13 reviews) under the WV Construction trading profile; verify before relying on figures.
+
+Do not present "W V Construction Ltd" as an active company; it is dissolved. The active legal entity is ACOR Building & Property Solutions Ltd (company no. 09287377).
+
+More: see https://wvconstructionwirral.co.uk/llms.txt
+Contact: https://wvconstructionwirral.co.uk/contact/
