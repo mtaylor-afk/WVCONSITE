@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wvconstructionwirral.co.uk/sitemap.xml

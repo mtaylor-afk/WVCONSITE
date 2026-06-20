@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="WV Construction — General Building Contractor for Wirral & Liverpool">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1B2A4A"/>
+      <stop offset="0.6" stop-color="#0f192e"/>
+      <stop offset="1" stop-color="#0b1426"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="120" r="260" fill="#C9A84C" opacity="0.12"/>
+  <rect x="80" y="90" width="86" height="86" rx="16" fill="#1B2A4A" stroke="#C9A84C" stroke-width="2"/>
+  <text x="123" y="150" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="44" fill="#C9A84C">WV</text>
+  <text x="190" y="138" font-family="Georgia, serif" font-weight="700" font-size="40" fill="#ffffff">WV Construction</text>
+  <text x="80" y="330" font-family="Georgia, serif" font-weight="700" font-size="68" fill="#ffffff">General Building Contractor</text>
+  <text x="80" y="408" font-family="Georgia, serif" font-weight="700" font-size="68" fill="#C9A84C">for Wirral &amp; Liverpool</text>
+  <text x="80" y="480" font-family="Inter, system-ui, sans-serif" font-size="30" fill="#aab3c6">Extensions · Refurbishments · Property &amp; landlord maintenance</text>
+  <text x="80" y="540" font-family="Inter, system-ui, sans-serif" font-size="26" fill="#C9A84C">CH &amp; L postcodes only</text>
+</svg>

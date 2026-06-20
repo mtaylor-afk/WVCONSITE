@@ -1,0 +1,2 @@
+# Canonical host: non-www. Redirect www -> apex (301).
+https://www.wvconstructionwirral.co.uk/* https://wvconstructionwirral.co.uk/:splat 301!

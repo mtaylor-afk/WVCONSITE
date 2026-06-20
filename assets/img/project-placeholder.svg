@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img" aria-label="Project photo placeholder">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#233357"/>
+      <stop offset="1" stop-color="#16223c"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#g)"/>
+  <g fill="none" stroke="#C9A84C" stroke-width="3" opacity="0.55">
+    <path d="M150 300 l150 -110 150 110"/>
+    <rect x="210" y="250" width="180" height="120"/>
+    <line x1="300" y1="190" x2="300" y2="160"/>
+  </g>
+  <text x="300" y="410" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="22" fill="#aab3c6">Project photo to be added</text>
+</svg>
