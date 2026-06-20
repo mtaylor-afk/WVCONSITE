@@ -28,6 +28,32 @@ CH and L postcodes only (Wirral and Liverpool — e.g. Wallasey, Birkenhead, Hes
 - Areas: https://wvconstructionwirral.co.uk/areas/
 - Contact: https://wvconstructionwirral.co.uk/contact/
 
+## Resources (guides)
+Search-led guides connecting the building journey: idea → visual concept → drawings → builder-ready pack → quote. TailoredQuote and SC Design Wirral are independent external services referenced as useful resources only — WV Construction is not in partnership with them, and SC Design Wirral is an architectural design and drawing service (not an architect/architectural practice).
+- Resources hub: https://wvconstructionwirral.co.uk/resources/
+- Send photos for a quote: https://wvconstructionwirral.co.uk/send-photos/
+
+TailoredQuote guides (visual quote tools, for builders/trades):
+- Overview: https://wvconstructionwirral.co.uk/resources/tailoredquote/
+- AI quote software for builders: https://wvconstructionwirral.co.uk/resources/tailoredquote/ai-quote-software-for-builders/
+- Website visualisers for builders: https://wvconstructionwirral.co.uk/resources/tailoredquote/website-visualiser-for-builders/
+- AI mockups for trade quotes: https://wvconstructionwirral.co.uk/resources/tailoredquote/ai-mockups-for-trade-quotes/
+- Digital quote approval for trades: https://wvconstructionwirral.co.uk/resources/tailoredquote/digital-quote-approval-for-trades/
+- Branded PDF quotes for builders: https://wvconstructionwirral.co.uk/resources/tailoredquote/branded-pdf-quotes-for-builders/
+- Quote software vs Word, Excel and WhatsApp: https://wvconstructionwirral.co.uk/resources/tailoredquote/quote-software-vs-word-excel-whatsapp/
+- From customer photos to quote-ready enquiries: https://wvconstructionwirral.co.uk/resources/tailoredquote/customer-photos-to-quote-ready-enquiries/
+
+SC Design Wirral guides (drawings & design, for homeowners):
+- Overview: https://wvconstructionwirral.co.uk/resources/sc-design-wirral/
+- Extension drawings in Wirral: https://wvconstructionwirral.co.uk/resources/sc-design-wirral/extension-drawings-wirral/
+- Planning vs building-regulations drawings: https://wvconstructionwirral.co.uk/resources/sc-design-wirral/planning-vs-building-regulations-drawings/
+- Builder quotation packs: https://wvconstructionwirral.co.uk/resources/sc-design-wirral/builder-quotation-packs/
+- Already have drawings? Next steps: https://wvconstructionwirral.co.uk/resources/sc-design-wirral/already-have-drawings-next-steps/
+- From visualiser concept to drawings: https://wvconstructionwirral.co.uk/resources/sc-design-wirral/visualiser-concept-to-drawings/
+- Loft & garage conversion drawings: https://wvconstructionwirral.co.uk/resources/sc-design-wirral/loft-garage-conversion-drawings/
+- Measured surveys & existing drawings: https://wvconstructionwirral.co.uk/resources/sc-design-wirral/measured-surveys-existing-drawings/
+- Permitted development & lawful development certificates: https://wvconstructionwirral.co.uk/resources/sc-design-wirral/permitted-development-lawful-development-certificate/
+
 ## Visualiser
 The Extension & Refurbishment Visualiser lets people upload a photo and describe an idea. Output is concept/inspiration only — it is NOT a quote, fixed price, architectural drawing, planning advice, structural design, building-regulations information, or confirmation that an idea is buildable or approvable. Visualised images are powered by TailoredQuote.co.uk (https://tailoredquote.co.uk/).
 

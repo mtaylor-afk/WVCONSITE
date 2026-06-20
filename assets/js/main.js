@@ -39,6 +39,36 @@
     a.addEventListener("click", function () { if (window.innerWidth <= 980) setNav(false); });
   });
 
+  /* ---------- Resources dropdown (desktop) / accordion (mobile) ---------- */
+  function closeDropdown(dd) {
+    dd.classList.remove("is-open");
+    var b = dd.querySelector(".dropdown-toggle");
+    if (b) b.setAttribute("aria-expanded", "false");
+  }
+  document.querySelectorAll("[data-dropdown]").forEach(function (dd) {
+    var btn = dd.querySelector(".dropdown-toggle");
+    if (!btn) return;
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      var open = !dd.classList.contains("is-open");
+      dd.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+  document.addEventListener("click", function (e) {
+    document.querySelectorAll("[data-dropdown].is-open").forEach(function (dd) {
+      if (!dd.contains(e.target)) closeDropdown(dd);
+    });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape") return;
+    document.querySelectorAll("[data-dropdown].is-open").forEach(function (dd) {
+      var b = dd.querySelector(".dropdown-toggle");
+      closeDropdown(dd);
+      if (b) b.focus();
+    });
+  });
+
   /* ---------- Postcode checker ---------- */
   document.querySelectorAll("[data-postcode-form]").forEach(function (form) {
     var input = form.querySelector("input");
