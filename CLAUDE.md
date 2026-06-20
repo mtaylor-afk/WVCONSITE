@@ -42,4 +42,39 @@ always target `main`, and never ask permission to push — it is permanently gra
 - **Domain:** `wvconstructionwirral.co.uk` — registered + DNS on Cloudflare; apex + www
   custom domains active with SSL.
 - **Local working copy:** `C:\Users\Matthew.Taylor\dev\WVCONSITE`.
-- **Edit workflow:** edit files → commit → push to `main` → Cloudflare rebuilds live site.
+
+## Build system — how to edit the site (IMPORTANT)
+The site (31 pages) is produced by a **local static-site generator** in `tools/` (which is
+**git-ignored** — not committed, not deployed). Only the generated static HTML + assets are
+committed and served by Cloudflare.
+
+- `tools/gen.js` — engine: shared chrome (head/header/footer/sticky CTA), reusable components,
+  page assembly, and auto-generates `sitemap.xml`. `SITE.indexable` controls the global
+  `noindex`/`index` flag for every page.
+- `tools/pages/*.js` — one module per page (or group): `home, visualiser, contact, reviews,
+  landlords, drawings, services, info, areas, projects, legal`. Each exports
+  `{ urlPath, navKey, title, description, breadcrumbs, jsonld?, draft?, main(c) }`.
+- `tools/qa.js` — deterministic checker: broken internal links, missing SEO tags, multiple H1s.
+
+**To change a page:** edit the relevant `tools/pages/*.js` module → run `node tools/gen.js`
+→ run `node tools/qa.js` → commit the regenerated HTML → push to `main`.
+**DO NOT hand-edit the generated `*/index.html` files** — they are overwritten on every regen.
+Shared header/footer/SEO live ONLY in `tools/gen.js`.
+
+## Launch gate & honest-build rules (do not break)
+- **Pre-launch noindex:** every page is `noindex` while `SITE.indexable = false` in `tools/gen.js`.
+  Flip to `true` + regen ONLY after the verification-gate facts are confirmed (registered office,
+  phone/mobile/email, insurance, MyBuilder rating/count/URL). VERIFY flags are in
+  `assets/js/site.js` and visible `[VERIFY…]` text in the footer.
+- **No fake functionality:** the visualiser must NOT fake AI generation ("Submit Visualiser Brief",
+  not "Generate my concept"). Forms have no backend — they open a prefilled WhatsApp/email (a real
+  send), never a fake "received". TODOs mark where a real endpoint/workflow goes.
+- **No invented facts / no Review or AggregateRating schema** until figures are verified.
+- **Trading name:** "WV Construction is a trading name of ACOR Building & Property Solutions Ltd"
+  (co. 09287377). Never present dissolved "W V Construction Ltd" as active. Don't call WV an
+  architect / structural engineer / planning consultant.
+- **TailoredQuote** attribution stays under the visualiser form and in every footer.
+
+## Edit/deploy workflow
+edit `tools/pages/*.js` → `node tools/gen.js` → `node tools/qa.js` → commit → push to `main`
+→ Cloudflare rebuilds the live site (~1 min).
