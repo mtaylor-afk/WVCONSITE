@@ -27,6 +27,13 @@ outside normal website work — so they effectively never come up): sending emai
 messages on his behalf, permanently deleting data, changing who can access a resource,
 or financial transactions. For those, flag in one line rather than executing blindly.
 
+## ALWAYS commit to `main` and push to GitHub — automatically, after every change
+After ANY edit to this repo, immediately run `git add` → `git commit` → `git push` to the
+**`main`** branch on GitHub. **Every time. Without being asked.** Matthew needs to see each
+change reflected on the live website before he can decide what to adjust next, and a push to
+`main` auto-deploys to Cloudflare (~1 min). So: never leave changes uncommitted or unpushed,
+always target `main`, and never ask permission to push — it is permanently granted.
+
 ## Project & deploy context
 - **Live site:** https://wvconstructionwirral.co.uk (and `www`).
 - **Hosting:** Cloudflare Pages project `wvconsite` (`wvconsite.pages.dev`), connected
