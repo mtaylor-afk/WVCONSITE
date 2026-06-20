@@ -117,9 +117,9 @@ strong { color: var(--ink); font-weight: 600; }
 .section--navy h1, .section--navy h2, .section--navy h3 { color: #fff; }
 .section--navy p { color: var(--on-navy-muted); }
 .eyebrow {
-  display: inline-block; font-family: var(--font-body); font-weight: 600;
+  display: inline-block; font-family: var(--font-body); font-weight: 700;
   font-size: var(--step--1); letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--gold-600); margin-bottom: var(--space-xs);
+  color: #806015; margin-bottom: var(--space-xs); /* deep gold — passes AA on light backgrounds */
 }
 .section--navy .eyebrow { color: var(--gold); }
 .section-head { max-width: 760px; margin-bottom: var(--space-lg); }
