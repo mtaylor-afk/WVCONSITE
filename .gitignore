@@ -1,0 +1,5 @@
+# Local build tooling — generates static HTML; not served, not deployed
+/tools/
+node_modules/
+.DS_Store
+Thumbs.db
